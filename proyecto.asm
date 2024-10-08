@@ -94,7 +94,7 @@ multiplicar:
 
 dividir:
     xchg ax, [resultado]
-    cwd  ; Extiende AX a DX:AX para división con signo
+    cwd  ; Extiende AX a DX:AX para division con signo
     idiv word ptr [num_temp]
     mov [resultado], ax
 
@@ -112,7 +112,7 @@ procesar_expresion endp
 procesar_numero proc
     xor ax, ax
     mov [num_temp], ax
-    mov cx, 1  ; Factor para número positivo/negativo
+    mov cx, 1  ; Factor para numero positivo/negativo
 
     ; Verificar si hay signo negativo
     cmp byte ptr [si], '-'
